@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"  defer></script>
+    <title>Flappy Bird</title>
+</head>
+
+<body>
+    <div id="howToPlay">Press Space or Up Arrow key or Touch to Play</div>
+    <div class="container">
+        <div class="header">
+            <h1 id="title">Flappy Bird</h1>
+            <div class="scoreBoard">
+                <p>Score: <span id="score">00</span></p>
+                <p>High Score: <span id="highScore">00</span></p>
+            </div>
+        </div>
+        <div class="gameContainer">
+            <div id="gameBoard">
+            <div class="bird" id="bird">
+                <div class="eye">
+                    <div class="dot"></div>
+                </div>
+                <div class="mouth">
+                    <div class="divider"></div>
+                </div>
+
+                <div class="wings"></div>
+            </div>
+
+            <div class="pool top" style="grid-area: 1 / 11 / auto / auto; grid-row: 1 / 6;" data-poolId="1"></div>
+            <div class="pool bottom" style="grid-area: 1 / 11 / auto / auto; grid-row: 10 / 15;" data-poolId="2"></div>
+
+            <div class="pool top" style="grid-area: 1 / 17 / auto / auto; grid-row: 1 / 6;" data-poolId="3"></div>
+            <div class="pool bottom" style="grid-area: 1 / 17 / auto / auto; grid-row: 10 / 15;" data-poolId="4"></div>
+
+            <div class="pool top" style="grid-area: 1 / 23 / auto / auto; grid-row: 1 / 6;" data-poolId="5"></div>
+            <div class="pool bottom" style="grid-area: 1 / 23 / auto / auto; grid-row: 10 / 15;" data-poolId="6"></div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>

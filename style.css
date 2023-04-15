@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --width: 350px;
+    --height: 500px;
+}
+
+@media (max-width: 450px) {
+    :root {
+        --width: 80vw;
+        --height: calc(100vw + 10vw);
+    }
+}
+
+@media (max-width: 360px) {
+    :root {
+        --width: 100vw;
+        --height: 100vh;
+    }
+}
+
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #768e97;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.none{
+    display: none;
+}
+
+#howToPlay{
+    /* display: none; */
+
+    font-size: 20px;
+    background-color: #00000059;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    width: fit-content;
+    margin-inline: 10px;
+    position: absolute;
+    top: 40%;
+    border-radius: 20px;
+}
+
+.container {
+    min-width: 300px;
+    width: var(--width);
+    height: var(--height);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: rgb(10, 184, 255);
+    background: linear-gradient(90deg, rgba(10, 184, 255, 1) 0%, rgba(0, 212, 255, 1) 23%, rgba(10, 184, 255, 1) 50%, rgba(0, 206, 251, 1) 74%, rgba(10, 184, 255, 1) 100%);
+    color: white;
+    text-align: center;
+    padding-block: 15px;
+}
+
+.header h1 {
+    font-size: 25px;
+    border-bottom: 1.5px solid black;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.scoreBoard {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+}
+
+.scoreBoard p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#score, #highScore{
+    font-weight: 500;
+}
+
+.gameContainer {
+    /* background-color: #47a1fa; */
+    background-image: url("img/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    flex-grow: 1;
+}
+
+#gameBoard{
+    height: 100%;
+    display: grid;
+    grid-template: repeat(14, 1fr) / repeat(13, 1fr);
+}
+
+.bird{
+    /* background-image: url("img/bird.png");
+    background-size: cover; */
+    background-color: yellow;
+    border-radius: 50%;
+    margin-block: 6%;
+    border: 1px solid black;
+    border-right: none;
+    z-index: 1;
+
+    grid-area: 8 / 4 / auto / auto;
+
+}
+
+
+/* Designing the Bird */
+.eye{
+    background-color: white;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    border: 1px solid black;
+    position: relative;
+    top: 20%;
+    left: 70%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.eye .dot{
+    background-color: black;
+    width: 50%;
+    height: 50%;
+    margin-top: 4%;
+    border-radius: 50%;
+}
+
+.mouth{
+    background-color: orange;
+    width: 50%;
+    height: 30%;
+    border-radius: 30%;
+    position: relative;
+    top: 32%;
+    left: 55%;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.mouth .divider{
+    background-color: black;
+    height: 15%;
+    width: 80%;
+}
+
+.wings{
+    background-color: orange;
+    width: 50%;
+    height: 35%;
+    border-radius: 30%;
+    border-bottom-left-radius: 100%;
+    border: 1px solid black;
+    position: relative;
+    top: -30%;
+    left: -20%;
+    
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    animation: wingFly .5s infinite;
+}
+
+@keyframes wingFly{
+    100%{
+        transform: scaleY(-1);
+    }
+}
+
+/* Designing the Pools */
+.pool{
+    background-color: greenyellow;
+    transition: grid-row 0.5s ease-in-out;
+}
