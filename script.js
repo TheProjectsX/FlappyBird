@@ -133,12 +133,12 @@ function setScore(check) {
             currentHighScore = currentScore;
             highScore.innerText = currentHighScore.toString().length < 2 ? "0" + currentHighScore : currentHighScore;
 
-            localStorage.setItem("highScore", currentHighScore);
+            localStorage.setItem("flappyBirdighScore", currentHighScore);
         }
 
     } else { // Check for localstorage to update the score
         score.innerText = currentScore.toString().length < 2 ? "0" + currentScore : currentScore;
-        currentHighScore = localStorage.getItem("highScore");
+        currentHighScore = localStorage.getItem("flappyBirdighScore");
         highScore.innerText = currentHighScore.toString().length < 2 ? "0" + currentHighScore : currentHighScore;
     }
 }
